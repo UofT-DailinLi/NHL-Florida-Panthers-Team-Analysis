@@ -52,7 +52,19 @@ In terms of expenses, player salaries are the most significant cost, with player
 
 # Part 2: League analysis
 
+```{r echo=FALSE, message=FALSE, label="tbl-cleaned"}
+#| tbl-cap: "First Ten Rows of Cleaned Sports Data"
 
+
+sports_data = read_csv(
+    file = here("inputs/sports_Data.csv"), show_col_types = FALSE)
+
+clean_data <-sports_data %>% select(1:2, (ncol(sports_data)-7):ncol(sports_data))
+colnames(clean_data)[4] <- "Winning Percents"
+kable(head(clean_data, 10), "latex", booktabs = T) %>%
+  kable_styling(font_size = 13, latex_options = c("scale_down", "hold_position")) 
+
+```
 
 
 
