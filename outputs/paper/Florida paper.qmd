@@ -6,11 +6,13 @@ thanks: "Code and data are available at: https://github.com/UofT-DailinLi/NHL-Fl
 date: today
 
 editor: visual
-format: pdf
+
 toc: true
 toc_depth: 2
 number-sections: true
 bibliography: references.bib
+format: pdf
+
 ---
 
 \newpage
@@ -41,7 +43,14 @@ The Florida Panthers were chosen for analysis because it was a unique opportunit
 
 
 # Part 1: Florida Panthers
-Although the Panthers are located in a southern city, the Miami metropolitan area actually boasts a population of 62 million, which is seventh in the U.S. Metropolitan Statistical Area (MSA) rankings[@NHLCitiesPopulation]. But hockey isn't as popular as traditional sports like football and basketball in southern cities, and even with a large market size, market penetration and fan engagement can be significantly reduced. Income levels in South Florida vary widely; as we can see from point2home's online data, the average household income is $79,886. However, by region, the highest average household income is $161,979, and the lowest is $35,837[@Miamiincomes2023].
+Although the Panthers are located in a southern city, the Miami metropolitan area actually boasts a population of 62 million, which is seventh in the U.S. Metropolitan Statistical Area (MSA) rankings[@NHLCitiesPopulation]. But hockey isn't as popular as traditional sports like football and basketball in southern cities, and even with a large market size, market penetration and fan engagement can be significantly reduced. Income levels in South Florida vary widely; as we can see from point2home's online data, the average household income is $79,886. However, by region, the highest average household income is $161,979, and the lowest is $35,837[@Miamiincomes2023]. Higher incomes in certain areas set the stage for revenue from pricey season tickets and front-row tickets. Also, the South Florida area is home to many corporate headquarters, including as many as five Fortune 500 companies. This lays a strong foundation for corporate sponsorships and partnerships, such as Ford being a major sponsor of the Panthers, which is a significant part of the team's revenue[@FloridaPanthersForbes].
+
+Regarding team revenue, ticket revenue is the most intuitive revenue, and the Panthers have $49 million in ticket revenue based on 2023 numbers, compared to his total revenue of $160 million, or about 30 percent. And the top teams in the rankings can all have ticket revenue of about 50% of their total revenue. This revenue first team's record, publicity and the impact of whether or not they have a recognizable player in the game, the Panthers still have a lot of room to improve. The remaining 70% of revenue is from television broadcasts, corporate sponsorships, and franchise merchandise sales[@FloridaPanthersForbes]. National telecast deals are shared among NHL teams, but local broadcast deals are based on market size and team popularity. Meanwhile, the Panthers have established strong relationships with many major corporations headquartered in Miami, including arena naming rights, advertising, and sponsorships that are a significant part of the team's revenue. Team-branded merchandise and arena food sales are additional major sources of revenue.
+
+
+In terms of expenses, player salaries are the most significant cost, with player expenses up to $90 million in 2023, which is 56% of total revenue, a percentage with expenses higher than many of the top few big teams. This could be related to the team's popularity and location, where the team has to pay high prices to retain talent. Again, most of the expenses are game operations, arena maintenance, and employee expenses. In 2023, the Panthers had a net income of $6 million, a vast improvement from the opposing net income before the epidemic[@FloridaPanthersForbes]. The team's dynamic and diverse revenue streams have allowed the Panthers to turn around their profit and loss, again adapting to the unique market conditions of South Florida.
+
+# Part 2: League analysis
 
 
 
@@ -69,5 +78,5 @@ Although the Panthers are located in a southern city, the Miami metropolitan are
 
 
 
-
+\newpage
 # Reference
