@@ -1,0 +1,73 @@
+---
+title: "Exploring the Impact of Atypical Events on Regret: Analysis Through Hitchhiker, Car Accident, and Robbery Scenarios"
+
+author: Dailin(Ben) li
+thanks: "Code and data are available at: https://github.com/UofT-DailinLi/NHL-Florida-Panthers-Team-Analysis.git" 
+date: today
+
+editor: visual
+format: pdf
+toc: true
+toc_depth: 2
+number-sections: true
+bibliography: references.bib
+---
+
+\newpage
+
+```{r echo=FALSE, message=FALSE}
+
+
+# Load libraries
+library(tidyverse)
+
+library(kableExtra)
+
+library(ggthemes)
+library(patchwork)
+
+
+library(here)
+library(ggplot2)
+library(dplyr)
+library(psych)
+library(reshape2)
+# Read in data
+
+```
+
+# Introduction
+The Florida Panthers were chosen for analysis because it was a unique opportunity to explore the dynamics of an ice hockey team in a southern city. Typically, ice hockey is played in cold areas, such as Canada and the United States’ northern cities. Ice culture has popularized the sport. However, the Panthers hockey team's location in the Miami metropolitan area is known for its warm climate. This is where we can look at a particular case to see how franchises have evolved and dealt with the challenges in a non-traditional field hockey market.
+
+
+# Part 1: Florida Panthers
+Although the Panthers are located in a southern city, the Miami metropolitan area actually boasts a population of 62 million, which is seventh in the U.S. Metropolitan Statistical Area (MSA) rankings[@NHLCitiesPopulation]. But hockey isn't as popular as traditional sports like football and basketball in southern cities, and even with a large market size, market penetration and fan engagement can be significantly reduced. Income levels in South Florida vary widely; as we can see from point2home's online data, the average household income is $79,886. However, by region, the highest average household income is $161,979, and the lowest is $35,837[@Miamiincomes2023].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Reference
