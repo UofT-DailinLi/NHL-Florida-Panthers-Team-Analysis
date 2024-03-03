@@ -1,5 +1,5 @@
 ---
-title: "Exploring the Impact of Atypical Events on Regret: Analysis Through Hitchhiker, Car Accident, and Robbery Scenarios"
+title: "Analyzing the Economic Viability of the Florida Panthers in a Non-traditional Hockey Marke"
 
 author: Dailin(Ben) li
 thanks: "Code and data are available at: https://github.com/UofT-DailinLi/NHL-Florida-Panthers-Team-Analysis.git" 
@@ -83,7 +83,7 @@ kable(head(df_clean, 10), "latex", booktabs = T) %>%
 
 @tbl-cleaned shows the first ten rows of cleaned sports data, "years" means the data was estimated in which year, "Team" means the sports team, "NHL Points" refers to a scoring system used in the NHL league, 2 points for a win, 1 point for an overtime or shootout loss, 0 points for a loss in regulation time. "Winning Percent" means the win rate of a team, and "population" means the Combined Statistical Area (CSA) population. The "Adjusted Revenue," "Adjusted Exp," "Adjusted Payroll (Million)," and "Adjusted Income" are four adjusted income-related variables.
 
-## Regressiin Model
+## Regression Model
 
 
 ```{r echo=FALSE, message=FALSE}
@@ -95,6 +95,7 @@ model_3 <- lm(Adjusted_Rev ~ Population + Adjusted_Payroll_million + Year +  Win
 ```
 
 ```{r echo=FALSE, message=FALSE}
+
 stargazer(model_1, model_2, model_3, type = "text",
           title="Comparison of Linear Regression Models",
           header = FALSE, # Adjust based on your output preference
@@ -104,18 +105,10 @@ stargazer(model_1, model_2, model_3, type = "text",
           font.size = "small",
           column.sep.width = "3pt" # Adjusts text for better readability 
           )
+
 ```
 
-
-
-
-
-
-
-
-
-
-
+From the first regression, we can see if we only care about the relationship between population and revenue, the constant is 130 million, and the coefficient for population is 1.743. It indicates that for one more million people in the combined statistic area, the team tends to earn 1.743 million dollars on average. However, this regression does not consider other variables like years and winning percentage. Thus, we run the second regression. We include years as dummy variables and winning percentages to eliminate the effect by years and investigate whether the win rate will affect the overall revenue. The table shows that the coefficient of the winning percent is positive. The win rate affects the overall revenue since the winning percentage in data is on a 1 scale. By controlling the dummy variable years, we can see the coefficient on years keeps increasing from 2015 to 2019. These coefficients indicate holding other variable fixes; 2015 tends to have 8.647 million $ more revenue than the base year 2014, and 2016 tends to have 11.101 million $ more than 2014. The increasing coefficient reveals the overall revenue for the NHL league has kept increasing from 2014 to 2019. For the third regression, we want to see if the payroll to the player, which is the most significant expense, affects the teams’ revenue. This regression shows that parole has a positive coefficient, but the constant becomes negative, indicating the payroll expense. But, this time, the winning percent coefficient becomes negative.
 
 
 
@@ -124,6 +117,19 @@ stargazer(model_1, model_2, model_3, type = "text",
 
 # Part 3: Team in the context of the league
 
+After analyzing the league situation, we choose the second model to examine the Florida Panthers' financial health. The regression model is here:     
+
+
+\begin{align*}
+\text{Adjusted\_Rev} = \ & \beta_0 + \beta_1 \times \text{Population} + \beta_2 \times \text{Winning\_Percent} + \\
+& \beta_3 \times \text{Year2015} + \beta_4 \times \text{Year2016} + \beta_5 \times \text{Year2017} + \\
+& \beta_6 \times \text{Year2018} + \beta_7 \times \text{Year2019} + \epsilon
+\end{align*}
+
+In this equation $\beta_0$ = 94.038, $\beta_1$ = 1.697, $\beta_2$ = 42.790, $\beta_3$ = 8.647, $\beta_4$ = 11.101, $\beta_5$ = 19.345, $\beta_6$ = 24.159, $\beta_7$ = 28.753. 
+
+
+After we put all of Panther's information into this equation, we got six revenue estimations from 2014-2019.2014 is 119.28, 2015 is 132.77, 2016 is 140.08, 2017 is 142.44, 2018 is 151.99, and 2019 is 152.36 million dollar. After we compare it to the real data, we can find the actual revenue is all below 100 million dollars. Actual revenues were well below estimates compared to expectations, meaning the Panthers' financial performance was well below the league environment and their situation. Several factors could have contributed to the lower-than-expected revenues, as the study period, 2014 through 2019, was pre-epidemic, so the epidemic's impact was excluded. This could be related to the team's winning percentage, which was lower, plus being located in the tropics of Florida, which led to a decline in the popularity of hockey as well as revenues from title and advertising. At the same time, the Panthers only made 30% of their gate receipts, which is a far lower figure than other teams. Net income has also invariably been in the red over the years. According to the analysis, the Floridian Panthers need to meet expectations, raising concerns about the team's financial situation. Whether or not the situation can be turned around in the future depends on whether the Panthers can capitalize on the dynamic market.
 
 
 
