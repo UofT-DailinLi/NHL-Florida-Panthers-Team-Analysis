@@ -1,4 +1,4 @@
-"Year","Team","NHL Points","Winning_Percent","Population","Adjusted_Rev","Adjusted_Exp","Adjusted_Payroll","Adjusted_Payroll_(Million)","Adjusted_Income"
+"Year","Team","NHL_Points","Winning_Percent","Population","Adjusted_Rev","Adjusted_Exp","Adjusted_Payroll","Adjusted_Payroll_million","Adjusted_Income"
 2014,"Anaheim Ducks",116,0.66,13.166609,107,110.7,59697500,59.7,-3.7
 2014,"Boston Bruins",117,0.66,4.746931,164,129.5,73705000,73.71,34.5
 2014,"Buffalo Sabres",52,0.26,1.13506,103,98.6,56677500,56.68,4.4

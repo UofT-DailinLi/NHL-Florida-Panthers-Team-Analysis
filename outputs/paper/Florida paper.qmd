@@ -25,10 +25,9 @@ library(tidyverse)
 library(stargazer)
 library(kableExtra)
 library(here)
-library(ggplot2)
 library(dplyr)
-library(psych)
-library(reshape2)
+
+
 
 
 ```
@@ -48,10 +47,10 @@ In terms of expenses, player salaries are the most significant cost, with player
 # Part 2: League analysis
 
 ## Data
-To run further league analysis and investigate why the Florida Panthers, a southern city-based hockey team, can survive in a complex sports environment, I gathered data from various sources, including Professor Rodney Fort's website[@RodsCodes], Forbes[@Forbes], Statistics Canada[@StatsCan], and the United States Census Bureau. I collected NHL team data from 2014 to 2019 for enough observations to run a regression analysis. It includes 182 observations and nine original variables: "Year," "Team," "Revenue," "Expense," "Payroll," "Operating Income," "NHL Points," "NHL Win Per," and "Population." To account for the inflation, I will adjust four variables, "Revenue," "Expense," "Payroll," and "Operating Income," by inflation rate to ensure they reflect constant dollars with the base year 2014, providing more accurate analysis and financial trends[@MinneapolisFedInflationCalculator]. Data was cleaned and analyzed using the open-source statistical programming language R [@r], and additional packages from `tidyverse` [@tidy], `ggplot2` [@rGgplot2], `kableExtra` [@rJanitor], here[@here], and `knit` [@rKnitr]. The cleaned dataset contains 182 observations, and nine cleaned variables will be shown below.
+To run further league analysis and investigate why the Florida Panthers, a southern city-based hockey team, can survive in a complex sports environment, I gathered data from various sources, including Professor Rodney Fort's website[@RodsCodes], Forbes[@Forbes], Statistics Canada[@StatsCan], and the United States Census Bureau. I collected NHL team data from 2014 to 2019 for enough observations to run a regression analysis. It includes 182 observations and nine original variables: "Year," "Team," "Revenue," "Expense," "Payroll," "Operating Income," "NHL Points," "NHL Win Per," and "Population." To account for the inflation, I will adjust four variables, "Revenue," "Expense," "Payroll," and "Operating Income," by inflation rate to ensure they reflect constant dollars with the base year 2014, providing more accurate analysis and financial trends[@MinneapolisFedInflationCalculator]. Data was cleaned and analyzed using the open-source statistical programming language R [@r], and additional packages from `tidyverse` [@tidy], `stargazer` [@stargazer], `kableExtra` [@kableExtra], `here`[@here], and `dplyr` [@dplyr]. The cleaned dataset contains 182 observations, and nine cleaned variables will be shown below.
 
 
-```{r echo=FALSE, message=FALSE, label="tbl-cleaned"}
+```{r echo=FALSE, message=FALSE, warning=FALSE, label="tbl-cleaned"}
 #| tbl-cap: "First Ten Rows of Cleaned Sports Data"
 
 
@@ -67,11 +66,10 @@ df_clean <- na.omit(clean_data)
 # Convert Population to millions
 df_clean$Population <- df_clean$Population / 1e6
 
-# View the first few rows to confirm the change
-head(data)
 
 
-write.csv(df_clean, here("outputs/data/cleaned_Sports_Data.csv"), row.names = FALSE)
+
+# write.csv(df_clean, here("outputs/data/cleaned_Sports_Data.csv"), row.names = FALSE)
 
 
 
@@ -88,12 +86,27 @@ kable(head(df_clean, 10), "latex", booktabs = T) %>%
 ## Regressiin Model
 
 
-```{r}
-simple_model <- lm(Adjusted_Rev ~ Population, data = df_clean)
-
-# Summary of the simple regression model
-summary(simple_model)
+```{r echo=FALSE, message=FALSE}
+# Convert Year to a factor
+df_clean$Year <- as.factor(df_clean$Year)
+model_1 <- lm(Adjusted_Rev ~ Population, data = df_clean)
+model_2 <- lm(Adjusted_Rev ~ Population +  Winning_Percent  + Year, data = df_clean)
+model_3 <- lm(Adjusted_Rev ~ Population + Adjusted_Payroll_million + Year +  Winning_Percent, data = df_clean)
 ```
+
+```{r echo=FALSE, message=FALSE}
+stargazer(model_1, model_2, model_3, type = "text",
+          title="Comparison of Linear Regression Models",
+          header = FALSE, # Adjust based on your output preference
+          model.names = TRUE,
+          intercept.bottom = FALSE, # Puts intercept at the top
+          
+          font.size = "small",
+          column.sep.width = "3pt" # Adjusts text for better readability 
+          )
+```
+
+
 
 
 
